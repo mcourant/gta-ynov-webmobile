@@ -2,10 +2,11 @@ image: node:latest
 
 stages:
   - build
+  - push_github
   - production
 
-test:
-  stage: test
+build:
+  stage: build
   script:
     - npm build
   artifacts:
@@ -13,11 +14,7 @@ test:
       - dist/
 
 test_ci_push:
-  tags:
-    - linux
-    - shell
-    - light
-  stage: profiling
+  stage: push_github
   allow_failure: false
   only:
     - new-benchmark-stage
