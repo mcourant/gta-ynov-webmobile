@@ -27,7 +27,7 @@ test_ci_push:
   stage: push_github
   allow_failure: false
   script:
-    - git remote add github https://mcourant:${PASSWORD_GITHUB}@github.com/mcourant/gta-ynov-webmobile.git
+    - git remote add github https://mcourant:$PASSWORD_GITHUB@github.com/mcourant/gta-ynov-webmobile.git
     - git config --global user.name "mcourant"
     - git config --global user.email "maxime.courant@ynov.com"
     - git add --all
