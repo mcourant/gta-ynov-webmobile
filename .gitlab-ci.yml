@@ -16,8 +16,6 @@ build:
 test_ci_push:
   stage: push_github
   allow_failure: false
-  only:
-    - new-benchmark-stage
   script:
     - git remote add github https://github.com/mcourant/gta-ynov-webmobile.git
     - touch test.dat
@@ -37,6 +35,4 @@ production:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
-    - dpl --provider=heroku --app=gta-ynov-webmobile --api-key=b90d07c0-46b1-462c-95df-d74235d6b619
-  only:
-    - tags
+    - dpl --provider=heroku --app=gta-ynov-webmobile --api-key=b90d07c0-46b1-462c-95df-d74235d6b619 
