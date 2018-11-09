@@ -24,10 +24,19 @@ npm run test
 ```
 npm run lint
 ```
-Jeudi 8 novembre
+
+URL PROD : https://gta-ynov-webmobile.herokuapp.com/
+
+#8-9 novembre
+
+##Jeudi 8 novembre
 
 Mise en place de la CI, elle permet d'installer les dépendences / build le projet / envoyer le code sur github / deploy sur heroku (lien publique)
 Ajout de l'authentification.
 Création de l'api.
 
 TODO: Mise en prod de lapi et liaison avec le front
+
+##Vendredi 9 novembre
+
+Mise en place de l'interface graphique avec login / logout / menu adaptatif entre chaque role de user

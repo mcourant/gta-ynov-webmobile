@@ -1,21 +1,25 @@
 <template>
-    <div class="hello">
-        <h1>Welcome to regular users page</h1>
-        <h2>{{msg}}</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <sidebar-component></sidebar-component>
+        </div>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "UserBoardComponent",
-        data () {
-            return {
-                msg: 'The commoners'
-            }
-        }
-    }
+import SidebarComponent from "./SidebarComponent";
+export default {
+  name: "UserBoardComponent",
+  components: {
+    SidebarComponent
+  },
+  data() {
+    return {
+      msg: "The commoners"
+    };
+  }
+};
 </script>
 
 <style scoped>
-
 </style>
