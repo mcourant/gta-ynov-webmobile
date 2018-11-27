@@ -40,3 +40,8 @@ TODO: Mise en prod de lapi et liaison avec le front
 ##Vendredi 9 novembre
 
 Mise en place de l'interface graphique avec login / logout / menu adaptatif entre chaque role de user
+
+
+###Log
+login : maxime.courant@ynov.com
+password : salarie
