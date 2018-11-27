@@ -14,20 +14,27 @@
                 <div>Dim</div>
             </div>
             <div class="range_picker_numbers">
-                <div class="range_picker_day" :class="[classForDay(day.date,month),showDemande(day.demande)]" v-for="day in month.getDate(allDemande)">
+                <div class="range_picker_day" @click="showModal(day)" :class="[classForDay(day.date,month),showDemande(day.demande)]" v-for="day in month.getDate(allDemande)">
                     <p>{{day.date.getDate()}}</p>
                 </div>
             </div>
         </div>
+        <b-modal title="Détail de l'évenement" ref="caractEvent" id="caractEvent">
+            <p>Début : {{ demande.start}}</p>
+            <p>End : {{ demande.end}}</p>
+            <p>Validation : {{ demande.validation}}</p>
+        </b-modal>
     </div>
 </template>
 
 <script>
 import Month from "../../class/Month.js";
+var moment = require('moment');
 export default {
   data() {
     return {
-      months: []
+      months: [],
+      demande: ""
     };
   },
   mounted() {
@@ -53,9 +60,19 @@ export default {
                 classes.push("range_picker_waiting")
               }else if(demande.validation == "refused"){
                   classes.push("range_picker_refused")
+              }else if(demande.validation == "validated"){
+                  classes.push("range_picker_validated")
               }
           }
           return classes
+      },
+      showModal(day){
+          if(day.demande != ""){
+              this.demande = day.demande
+              this.demande.start = moment(day.demande.dateStart).format("DD / MM / YYYY hh:mm:ss a")
+              this.demande.end = moment(day.demande.dateEnd).format("DD / MM / YYYY hh:mm:ss a")
+              this.$refs.caractEvent.show()
+          }
       }
   }
 };
@@ -117,7 +134,8 @@ export default {
     color:white;
 }
 .range_picker_day p{
-    z-index:1;
+    z-index:1;   
+    cursor:pointer;
 }
 .rangepicker_event::after {
     content: "";
@@ -128,6 +146,7 @@ export default {
     left: 0.5em;
     height: 25px;
     border-radius: 50%;
+    cursor:pointer;
 }
 
 .range_picker_waiting::after{
@@ -135,6 +154,12 @@ export default {
 }
 .range_picker_refused::after{
     background: #dc3545;
+}
+.range_picker_validated::after{
+    background: #28a745;
+}
+.range_picker{
+    margin-bottom: 20px;
 }
 </style>
 
