@@ -53,12 +53,13 @@ export default {
       e.preventDefault();
       if (this.password.length > 0) {
         this.$http
-          .post("https://gta-ynov-webmobile-api.herokuapp.com/login", {
+          .post("http://localhost:5000/login", {
             email: this.email,
             password: this.password
           })
           .then(response => {
             let role = response.data.user.role;
+            console.log(response.data.user)
             localStorage.setItem("user", JSON.stringify(response.data.user));
             localStorage.setItem("jwt", response.data.token);
 

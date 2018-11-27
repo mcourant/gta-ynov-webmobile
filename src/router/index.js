@@ -5,6 +5,9 @@ import Login from './../components/LoginComponent'
 import Register from './../components/RegisterComponent'
 import UserBoard from './../components/UserBoardComponent'
 import Admin from './../components/AdminComponent'
+import Demande from "./../components/Salarie/DemandeComponent"
+import Profil from "./../components/Salarie/ProfilComponent.vue"
+import Planning from "./../components/Salarie/PlanningComponent.vue"
 
 Vue.use(Router)
 
@@ -41,7 +44,24 @@ let router = new Router({
             component: UserBoard,
             meta: {
                 requiresAuth: true
-            }
+            },
+            children:[
+                {
+                    path:"demande-conge",
+                    name:"Demande de congé",
+                    component: Demande
+                },
+                {
+                    path:"profil",
+                    name:"Profil",
+                    component: Profil
+                },
+                {
+                    path:"planning",
+                    name:"planning",
+                    component: Planning
+                }
+            ]
         },
         {
             path: '/admin',

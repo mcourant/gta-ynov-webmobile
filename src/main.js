@@ -3,6 +3,10 @@ import App from './App.vue'
 import Axios from 'axios'
 import router from "./router/"
 
+import { Datetime } from 'vue-datetime';
+import 'vue-datetime/dist/vue-datetime.css'
+Vue.component('datetime', Datetime);
+
 Vue.prototype.$http = Axios;
 
 Vue.config.productionTip = false
