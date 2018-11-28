@@ -121,8 +121,8 @@ export default {
               response.data.demande.forEach((demande) => {
                   var tmpDemande = {}
                   tmpDemande = demande
-                  tmpDemande["dateStart"] = moment(demande.dateStart).format("D / MM / YYYY hh:mm:ss a")
-                  tmpDemande["dateEnd"] = moment(demande.dateEnd).format("D / MM / YYYY hh:mm:ss a")
+                  tmpDemande["dateStart"] = moment(demande.dateStart).format("DD / MM / YYYY hh:mm:ss a")
+                  tmpDemande["dateEnd"] = moment(demande.dateEnd).format("DD / MM / YYYY hh:mm:ss a")
                   arrayResult.push(tmpDemande)
               })
               this.loading = false

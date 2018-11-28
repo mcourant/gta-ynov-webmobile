@@ -143,7 +143,8 @@ export default {
     width: 25px;
     position: absolute;
     top: 0.72em;
-    left: 0.5em;
+    left: 50%;
+    transform: translate(-50%);
     height: 25px;
     border-radius: 50%;
     cursor:pointer;
