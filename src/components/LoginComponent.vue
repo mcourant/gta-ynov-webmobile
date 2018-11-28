@@ -70,13 +70,13 @@ export default {
               } else {
                 switch (role) {
                   case "drh":
-                    this.$router.push("dashboard");
+                    this.$router.push("userboard");
                     break;
                   case "responsable":
-                    this.$router.push("dashboard");
+                    this.$router.push("userboard");
                     break;
                   case "salarie":
-                    this.$router.push("dashboard");
+                    this.$router.push("userboard");
                     break;
                   default:
                     break;

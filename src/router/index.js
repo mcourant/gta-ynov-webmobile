@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './../components/HomeComponent'
 import Login from './../components/LoginComponent'
 import Register from './../components/RegisterComponent'
 import UserBoard from './../components/UserBoardComponent'
@@ -17,14 +16,6 @@ let router = new Router({
     mode: 'history',
     routes: [
         {
-            path: '/',
-            name: 'Home',
-            component: Home,
-            meta: {
-                requiresAuth: true
-            }
-        },
-        {
             path: '/login',
             name: 'login',
             component: Login,
@@ -40,6 +31,7 @@ let router = new Router({
                 guest: true
             }
         },
+        { path: '/', redirect: { name: 'userboard' }},
         {
             path: '/dashboard',
             name: 'userboard',
