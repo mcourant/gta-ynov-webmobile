@@ -41,7 +41,20 @@ TODO: Mise en prod de lapi et liaison avec le front
 
 Mise en place de l'interface graphique avec login / logout / menu adaptatif entre chaque role de user
 
+Pas de prise de note sur les différentes séances après celle du 9.
 
 ###Log
+Salarié : 
 login : maxime.courant@ynov.com
 password : salarie
+Fonctionnalité pratiquement fini
+
+Responsable : 
+login : responsable@ynov.com
+password : responsable
+Fonctionnalité pas développé mais le sera vendredi durant la présentation
+
+Drh :
+login : drh@ynov.com
+password : drh
+Fonctionnalité pas développé mais le sera vendredi durant la présentation

@@ -9,6 +9,8 @@ import Demande from "./../components/Salarie/DemandeComponent"
 import Profil from "./../components/Salarie/ProfilComponent.vue"
 import Planning from "./../components/Salarie/PlanningComponent.vue"
 
+import AllTeam from "./../components/Drh/AllTeamComponent.vue"
+
 Vue.use(Router)
 
 let router = new Router({
@@ -60,6 +62,11 @@ let router = new Router({
                     path:"planning",
                     name:"planning",
                     component: Planning
+                },
+                {
+                    path:"teams",
+                    name:"Teams",
+                    component:AllTeam
                 }
             ]
         },

@@ -1,6 +1,6 @@
 <template>
     <nav v-if="isLogged" class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Rôle : {{user.role}}</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <a class="nav-link" href="#" v-on:click="logout()">Sign out</a>
@@ -16,7 +16,8 @@
         name: "NavbarComponent",
         data() {
             return {
-                isLogged: false
+                isLogged: false,
+                user: {}
             }
         },
         beforeCreate(){
@@ -24,13 +25,15 @@
                 this.isLogged = (localStorage.getItem("jwt")!=null)
             }, 100)
         },
+        created(){
+            this.user = JSON.parse(localStorage.getItem("user"));
+        },
         methods: {
             logout() {
+                this.$router.go("login")
                 this.isLogged = false
-                console.log(this.isLogged)
                 localStorage.removeItem("user")
                 localStorage.removeItem("jwt")
-                this.$router.push("login")
             }
         }
     }

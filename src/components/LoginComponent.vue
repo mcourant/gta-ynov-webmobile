@@ -28,6 +28,7 @@
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn" @click="handleSubmit">
 					</div>
+          <router-link to="/register">Register</router-link>
 				</form>
 			</div>
 		</div>
@@ -70,7 +71,7 @@ export default {
               } else {
                 switch (role) {
                   case "drh":
-                    this.$router.push("admin");
+                    this.$router.push("dashboard");
                     break;
                   case "responsable":
                     this.$router.push("dashboard");
