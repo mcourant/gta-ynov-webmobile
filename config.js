@@ -1,3 +1,3 @@
 export default {
-    "urlApi" : "http://localhost:5000"
+    "urlApi" : "https://gta-ynov-webmobile-api.herokuapp.com"
 }

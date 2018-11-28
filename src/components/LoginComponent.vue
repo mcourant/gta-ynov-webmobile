@@ -28,7 +28,6 @@
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn" @click="handleSubmit">
 					</div>
-          <router-link to="/register">Register</router-link>
 				</form>
 			</div>
 		</div>
@@ -54,7 +53,7 @@ export default {
       e.preventDefault();
       if (this.password.length > 0) {
         this.$http
-          .post("http://localhost:5000/login", {
+          .post("https://gta-ynov-webmobile-api.herokuapp.com/login", {
             email: this.email,
             password: this.password
           })
