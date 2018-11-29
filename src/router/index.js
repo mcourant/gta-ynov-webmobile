@@ -9,6 +9,14 @@ import Profil from "./../components/Salarie/ProfilComponent.vue"
 import Planning from "./../components/Salarie/PlanningComponent.vue"
 
 import AllTeam from "./../components/Drh/AllTeamComponent.vue"
+import EditTeam from "./../components/Drh/EditTeamComponent.vue"
+
+import ManagerTeam from "./../components/Drh/ManagerTeamsComponent.vue"
+import UserEdit from "./../components/Drh/UserEditComponent.vue"
+
+import ErrorComp from "./../components/ErrorComponent.vue"
+
+import ListDemande from "./../components/Responsable/ListDemandeComponent.vue"
 
 Vue.use(Router)
 
@@ -57,9 +65,37 @@ let router = new Router({
                 },
                 {
                     path:"teams",
-                    name:"Teams",
-                    component:AllTeam
-                }
+                    component:ManagerTeam,
+                    children:[
+                        {
+                            path:":id/edit",
+                            name:"team/edit",
+                            component: EditTeam,
+                            props: true
+                        },
+                        {
+                            path:":id/changeuser",
+                            name:"team/changeuser",
+                            component: UserEdit,
+                            props: true
+                        },
+                        {
+                            path:"",
+                            name:"Teams",
+                            component:AllTeam
+                        }
+                    ]
+                },
+                {
+                    path:"salarie",
+                    name:"salarie",
+                    component: ErrorComp
+                },
+                {
+                    path:"list-demande",
+                    name:"list-demande",
+                    component: ListDemande
+                },
             ]
         },
         {

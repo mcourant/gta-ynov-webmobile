@@ -5,7 +5,10 @@
     >
       <h1 class="h2">Planning</h1>
     </div>
-    <range-picker v-if="allDemande.length != 0" :year="2018" :all-demande="allDemande"/>
+    <div class="alert alert-warning" role="alert">
+        Seulement les demandes de l'utilsateur en cours sont prisent en compte
+    </div>
+    <range-picker :year="2018" :all-demande="allDemande"/>
   </div>
 </template>
 
