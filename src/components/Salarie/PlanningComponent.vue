@@ -36,19 +36,21 @@ export default {
     },
     methods:{
         async launchGetDemande() {
+            setInterval(() => {
             this.$http
-            .get(config.urlApi + `/users/${this.user.id}/asking`)
-            .then(response => {
-                const arrayResult = []
-                response.data.demande.forEach((demande) => {
-                    var tmpDemande = {}
-                    tmpDemande = demande
-                    tmpDemande["dateStart"] = demande.dateStart
-                    tmpDemande["dateEnd"] = demande.dateEnd
-                    arrayResult.push(tmpDemande)
-                })
-                this.allDemande = arrayResult
-          });
+                .get(config.urlApi + `/users/${this.user.id}/asking`)
+                .then(response => {
+                    const arrayResult = []
+                    response.data.demande.forEach((demande) => {
+                        var tmpDemande = {}
+                        tmpDemande = demande
+                        tmpDemande["dateStart"] = demande.dateStart
+                        tmpDemande["dateEnd"] = demande.dateEnd
+                        arrayResult.push(tmpDemande)
+                    })
+                    this.allDemande = arrayResult
+            });
+          },1000)
         }
     }
 }

@@ -49,7 +49,7 @@
                   <td>{{demande.dateEnd}}</td>
                   <td>
                         <span v-if="demande.validation == 'validated'" class="badge badge-success">Accepté</span>
-                        <span v-else-if="demande.validation == 'refused'" class="badge badge-error">Refusé</span>
+                        <span v-else-if="demande.validation == 'refused'" class="badge badge-danger">Refusé</span>
                         <span v-else class="badge badge-warning">En attente</span>
                   </td>
                 </tr>

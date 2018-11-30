@@ -40,6 +40,7 @@ let router = new Router({
             }
         },
         { path: '/', redirect: { name: 'userboard' }},
+        { path: '/dashboard', redirect: { name: 'planning' }},
         {
             path: '/dashboard',
             name: 'userboard',
